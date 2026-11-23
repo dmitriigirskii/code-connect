@@ -1,0 +1,81 @@
+.button {
+  --_button-background: var(--button-background, #2c2e30);
+  --_button-color: var(--button-color, #f0f1f2);
+  --_button-border: var(--border-primary, #3c3f42);
+  --_button-radius: var(--radius-0-5, 4px);
+  --_button-opacity-hover: var(--opacity-hover, 0.75);
+  --_button-opacity-active: var(--opacity-active, 0.5);
+  --_button-opacity-disabled: var(--opacity-disabled, 0.25);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid var(--_button-border);
+  border-radius: var(--_button-radius);
+  background: var(--_button-background);
+  color: var(--_button-color);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 100ms ease;
+}
+
+.button:hover:not(:disabled) {
+  opacity: var(--_button-opacity-hover);
+}
+
+.button:active:not(:disabled) {
+  opacity: var(--_button-opacity-active);
+}
+
+.button:disabled,
+.stateDisabled {
+  opacity: var(--_button-opacity-disabled);
+  cursor: not-allowed;
+}
+
+.stateHover {
+  opacity: var(--_button-opacity-hover);
+}
+
+.stateActive {
+  opacity: var(--_button-opacity-active);
+}
+
+.stateDisabled:hover,
+.stateDisabled:active {
+  opacity: var(--_button-opacity-disabled);
+}
+
+.iconTypeLeading {
+  padding-right: 16px;
+  padding-left: 12px;
+}
+
+.iconTypeTrailing {
+  padding-right: 12px;
+  padding-left: 16px;
+}
+
+.iconTypeIcononly {
+  padding-right: 9px;
+  padding-left: 9px;
+}
+
+.icon {
+  display: block;
+  flex: none;
+  width: var(--icon-s, 16px);
+  height: var(--icon-s, 16px);
+}
+
+.label {
+  display: block;
+}
